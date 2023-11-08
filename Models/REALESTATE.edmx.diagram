@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7e4f2117fffe4f568ab7d30eb9997b43" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="REALESTATEModel.RealAllError" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="REALESTATEModel.RealComment" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="REALESTATEModel.RealPost" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="REALESTATEModel.RealPostsImage" Width="1.5" PointX="8.875" PointY="0.75" />
+        <EntityTypeShape EntityType="REALESTATEModel.RealREGUSER" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="REALESTATEModel.RealSavedpost" Width="1.5" PointX="1.125" PointY="2.75" />
+        <EntityTypeShape EntityType="REALESTATEModel.Realrequest" Width="1.5" PointX="8.625" PointY="2.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="REALESTATEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RealAllError">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="errormessage" Type="nvarchar(max)" />
+          <Property Name="daction" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="RealComments">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="userimage" Type="nvarchar(max)" />
+          <Property Name="postid" Type="int" />
+          <Property Name="comment" Type="nvarchar(max)" />
+          <Property Name="date" Type="date" />
+          <Property Name="datecomment" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RealPosts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userimage" Type="nvarchar(max)" />
+          <Property Name="postheader" Type="nvarchar(max)" />
+          <Property Name="postbody" Type="nvarchar(max)" />
+          <Property Name="userid" Type="int" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="comments" Type="int" />
+          <Property Name="likes" Type="int" />
+          <Property Name="share" Type="int" />
+          <Property Name="postid" Type="nvarchar(max)" />
+          <Property Name="usermobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="userdate" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="date" />
+          <Property Name="image1" Type="nvarchar(max)" />
+          <Property Name="image2" Type="nvarchar(max)" />
+          <Property Name="image3" Type="nvarchar(max)" />
+          <Property Name="image4" Type="nvarchar(max)" />
+          <Property Name="image5" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RealPostsImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="postid" Type="nvarchar" MaxLength="50" />
+          <Property Name="imageurl" Type="nvarchar(max)" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="RealREGUSER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar(max)" />
+          <Property Name="job_title" Type="nvarchar(max)" />
+          <Property Name="imageurl" Type="nvarchar(max)" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="usertype" Type="int" />
+          <Property Name="date" Type="date" />
+        </EntityType>
+        <EntityType Name="Realrequest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int" />
+          <Property Name="username" Type="nvarchar(max)" />
+          <Property Name="userimage" Type="nvarchar(max)" />
+          <Property Name="mobileno" Type="nvarchar" MaxLength="50" />
+          <Property Name="comment" Type="nvarchar(max)" />
+          <Property Name="date" Type="date" />
+          <Property Name="datecomment" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RealSavedpost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="postid" Type="int" />
+          <Property Name="userid" Type="int" />
+          <Property Name="postusername" Type="nvarchar" MaxLength="50" />
+          <Property Name="postuserimage" Type="nvarchar(max)" />
+          <Property Name="usermobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="body" Type="nvarchar(max)" />
+          <Property Name="date" Type="date" />
+          <Property Name="datestring" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="REALESTATEModelStoreContainer">
+          <EntitySet Name="RealAllError" EntityType="Self.RealAllError" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealComments" EntityType="Self.RealComments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealPosts" EntityType="Self.RealPosts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealPostsImage" EntityType="Self.RealPostsImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealREGUSER" EntityType="Self.RealREGUSER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Realrequest" EntityType="Self.Realrequest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealSavedpost" EntityType="Self.RealSavedpost" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="REALESTATEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="REALESTATEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RealAllErrors" EntityType="REALESTATEModel.RealAllError" />
+          <EntitySet Name="RealComments" EntityType="REALESTATEModel.RealComment" />
+          <EntitySet Name="RealPosts" EntityType="REALESTATEModel.RealPost" />
+          <EntitySet Name="RealPostsImages" EntityType="REALESTATEModel.RealPostsImage" />
+          <EntitySet Name="RealREGUSERs" EntityType="REALESTATEModel.RealREGUSER" />
+          <EntitySet Name="RealSavedposts" EntityType="REALESTATEModel.RealSavedpost" />
+          <EntitySet Name="Realrequests" EntityType="REALESTATEModel.Realrequest" />
+        </EntityContainer>
+        <EntityType Name="RealAllError">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="errormessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="daction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="RealComment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="postid" Type="Int32" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="datecomment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RealPost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="postheader" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="postbody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="comments" Type="Int32" />
+          <Property Name="likes" Type="Int32" />
+          <Property Name="share" Type="Int32" />
+          <Property Name="postid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="usermobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="image1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RealPostsImage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="postid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imageurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="RealREGUSER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="job_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="imageurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="usertype" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="RealSavedpost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="postid" Type="Int32" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="postusername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="postuserimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="usermobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="datestring" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Realrequest">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="datecomment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="userimage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobileno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="REALESTATEModelStoreContainer" CdmEntityContainer="REALESTATEEntities">
+          <EntitySetMapping Name="RealAllErrors">
+            <EntityTypeMapping TypeName="REALESTATEModel.RealAllError">
+              <MappingFragment StoreEntitySet="RealAllError">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="daction" ColumnName="daction" />
+                <ScalarProperty Name="errormessage" ColumnName="errormessage" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealComments">
+            <EntityTypeMapping TypeName="REALESTATEModel.RealComment">
+              <MappingFragment StoreEntitySet="RealComments">
+                <ScalarProperty Name="datecomment" ColumnName="datecomment" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="postid" ColumnName="postid" />
+                <ScalarProperty Name="userimage" ColumnName="userimage" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealPosts">
+            <EntityTypeMapping TypeName="REALESTATEModel.RealPost">
+              <MappingFragment StoreEntitySet="RealPosts">
+                <ScalarProperty Name="image5" ColumnName="image5" />
+                <ScalarProperty Name="image4" ColumnName="image4" />
+                <ScalarProperty Name="image3" ColumnName="image3" />
+                <ScalarProperty Name="image2" ColumnName="image2" />
+                <ScalarProperty Name="image1" ColumnName="image1" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="userdate" ColumnName="userdate" />
+                <ScalarProperty Name="usermobile" ColumnName="usermobile" />
+                <ScalarProperty Name="postid" ColumnName="postid" />
+                <ScalarProperty Name="share" ColumnName="share" />
+                <ScalarProperty Name="likes" ColumnName="likes" />
+                <ScalarProperty Name="comments" ColumnName="comments" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="postbody" ColumnName="postbody" />
+                <ScalarProperty Name="postheader" ColumnName="postheader" />
+                <ScalarProperty Name="userimage" ColumnName="userimage" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealPostsImages">
+            <EntityTypeMapping TypeName="REALESTATEModel.RealPostsImage">
+              <MappingFragment StoreEntitySet="RealPostsImage">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="imageurl" ColumnName="imageurl" />
+                <ScalarProperty Name="postid" ColumnName="postid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealREGUSERs">
+            <EntityTypeMapping TypeName="REALESTATEModel.RealREGUSER">
+              <MappingFragment StoreEntitySet="RealREGUSER">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="imageurl" ColumnName="imageurl" />
+                <ScalarProperty Name="job_title" ColumnName="job_title" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealSavedposts">
+            <EntityTypeMapping TypeName="REALESTATEModel.RealSavedpost">
+              <MappingFragment StoreEntitySet="RealSavedpost">
+                <ScalarProperty Name="datestring" ColumnName="datestring" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="body" ColumnName="body" />
+                <ScalarProperty Name="usermobile" ColumnName="usermobile" />
+                <ScalarProperty Name="postuserimage" ColumnName="postuserimage" />
+                <ScalarProperty Name="postusername" ColumnName="postusername" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="postid" ColumnName="postid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Realrequests">
+            <EntityTypeMapping TypeName="REALESTATEModel.Realrequest">
+              <MappingFragment StoreEntitySet="Realrequest">
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="userimage" ColumnName="userimage" />
+                <ScalarProperty Name="datecomment" ColumnName="datecomment" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
